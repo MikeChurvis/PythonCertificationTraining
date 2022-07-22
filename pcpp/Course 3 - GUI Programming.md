@@ -106,3 +106,37 @@ TicTacToeButton(tk.Button)
 - self.column
 - self.mark_with_x()
 - self.mark_with_o()
+
+## Pocket Calculator
+
+### Specs
+
+Has 3 modes:
+- Left operand mode (LOP)
+- Right operand mode (ROP)
+- Result mode (RES)
+
+Default is LOP mode.
+
+At all times:
+- Pressing the clear button resets the calculator state, thus entering LOP mode.
+
+While in LOP:
+- Pressing a numpad button appends a digit to the left operand. 
+- Pressing the negator button inverts the sign of the left operand.
+- Pressing the equal button causes the operator buttons to pulse.
+- Pressing an operator button selects that operator and switches to ROP mode.
+
+While in ROP:
+- Pressing a numpad button appends a digit to the right operand.
+- Pressing the negator button inverts the sign of the right operand.
+- Pressing 
+
+# End-of-Course Test
+
+Grade: 79%
+
+Takeaways:
+- An event that binds to the Q key is just `'q'`, not `'<Q>'`or `'<Key-Q>'`.
+- Changing a button's status is done with `.config(state=)`, not `status=`.
+- Give focus to a widget with `.focus_set()`, not `.give_focus()`.
