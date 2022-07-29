@@ -141,3 +141,42 @@ xml.etree.ElementTree.SubElement(new_car, 'price', {'currency': 'EUR'}).text = '
 cars_for_sale.append(new_car)
 tree.write('newcars.xml', method='')
 ```
+
+### The `requests` Library
+
+`reply = requests.get(...)`
+- `reply.text`
+- `reply.status_code`
+- `reply.headers`
+
+`request.exceptions`
+```
+RequestException 
+|___HTTPError 
+|___ConnectionError 
+| |___ProxyError 
+| |___SSLError 
+|___Timeout 
+| |___ConnectTimeout 
+| |___ReadTimeout 
+|___URLRequired 
+|___TooManyRedirects 
+|___MissingSchema 
+|___InvalidSchema 
+|___InvalidURL 
+| |___InvalidProxyURL 
+|___InvalidHeader 
+|___ChunkedEncodingError 
+|___ContentDecodingError 
+|___StreamConsumedError 
+|___RetryError 
+|___UnrewindableBodyError
+```
+
+### CRUD
+
+Create - `POST`
+Read - `GET`
+Update - `PUT`
+Delete - `DELETE`
+
