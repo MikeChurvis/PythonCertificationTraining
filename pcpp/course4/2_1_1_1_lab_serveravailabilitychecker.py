@@ -50,7 +50,7 @@ if __name__ == '__main__':
             quit_with_error(3, "Connection Timeout: the server took too long to respond.")
         except (socket.gaierror, ConnectionRefusedError) as other_network_error:
             quit_with_error(4, f"Connection Failed: {type(other_network_error).__name__}")
-        finally:
+        else:
             sock.shutdown(socket.SHUT_RDWR)
             sock.close()
 
