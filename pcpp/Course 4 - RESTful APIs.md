@@ -180,3 +180,142 @@ Read - `GET`
 Update - `PUT`
 Delete - `DELETE`
 
+# End-of-course Project - Vintage Cars CRUD App
+
+### Behavior
+
+##### Frames
+
+The following are still images demonstrating the expected behavior of the application.
+
+```
++-----------------------------------+  
+|       Vintage Cars Database       |  
++-----------------------------------+  
+M E N U  
+=======  
+1. List cars  
+2. Add new car  
+3. Delete car  
+4. Update car  
+0. Exit  
+Enter your choice (0..4): 1  
+*** Database is empty ***  
+```
+
+```
++-----------------------------------+  
+|       Vintage Cars Database       |  
++-----------------------------------+  
+M E N U  
+=======  
+1. List cars  
+2. Add new car  
+3. Delete car  
+4. Update car  
+0. Exit  
+Enter your choice (0..4): 2  
+Car ID (empty string to exit): 1  
+Car brand (empty string to exit): Porsche  
+Car model (empty string to exit): 911  
+Car production year (empty string to exit): 1963  
+Is this car convertible? [y/n] (empty string to exit): n  
+```
+
+```
++-----------------------------------+  
+|       Vintage Cars Database       |  
++-----------------------------------+  
+M E N U  
+=======  
+1. List cars  
+2. Add new car  
+3. Delete car  
+4. Update car  
+0. Exit  
+Enter your choice (0..4): 2  
+Car ID (empty string to exit): 2  
+Car brand (empty string to exit): Ford  
+Car model (empty string to exit): Mustang  
+Car production year (empty string to exit): 1972  
+Is this car convertible? [y/n] (empty string to exit): y  
+```
+
+```
++-----------------------------------+  
+|       Vintage Cars Database       |  
++-----------------------------------+  
+M E N U  
+=======  
+1. List cars  
+2. Add new car  
+3. Delete car  
+4. Update car  
+0. Exit  
+Enter your choice (0..4): 1  
+id        | brand          | model     | production_year     | convertible    |  
+1         | Porsche        | 911       | 1963                | False          |  
+2         | Ford           | Mustang   | 1972                | True           |  
+```
+
+```
++-----------------------------------+  
+|       Vintage Cars Database       |  
++-----------------------------------+  
+M E N U  
+=======  
+1. List cars  
+2. Add new car  
+3. Delete car  
+4. Update car  
+0. Exit  
+Enter your choice (0..4):  4  
+Car ID (empty string to exit): 2  
+Car brand (empty string to exit): Ford  
+Car model (empty string to exit): Mustang  
+Car production year (empty string to exit): 1973  
+Is this car convertible? [y/n] (empty string to exit): n  
+```
+
+```
++-----------------------------------+  
+|       Vintage Cars Database       |  
++-----------------------------------+  
+M E N U  
+=======  
+1. List cars  
+2. Add new car  
+3. Delete car  
+4. Update car  
+0. Exit  
+Enter your choice (0..4): 3  
+Car ID (empty string to exit): 1  
+Success!  
+Car ID (empty string to exit):  
+```
+
+```
++-----------------------------------+  
+|       Vintage Cars Database       |  
++-----------------------------------+  
+M E N U  
+=======  
+1. List cars  
+2. Add new car  
+3. Delete car  
+4. Update car  
+0. Exit  
+Enter your choice (0..4): 0  
+Bye!
+```
+
+##### Specifications
+
+###### Data Model
+
+- Car.brand is a non-empty string containing digits, letters, and spaces.
+- Car.model is a non-empty string containing digits, letters, and spaces.
+- Car.id is a non-negative integer.
+- Car.production_year is an integer in range(1900, 2000)
+- Car.convertible is a boolean.
+

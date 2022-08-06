@@ -1,0 +1,14 @@
+{
+  "vintage_cars": [
+    {
+      "id": 0,
+      "brand": "TestBrand",
+      "model": "TestModel",
+      "production_year": 1970,
+      "convertible": false
+    }
+  ],
+  "vintage_cars_meta": {
+    "next_id": 1
+  }
+}
