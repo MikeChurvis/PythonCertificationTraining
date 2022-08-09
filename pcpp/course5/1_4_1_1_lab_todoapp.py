@@ -15,6 +15,14 @@ def show_tasks(connection: sqlite3.Connection):
         print(row)
 
 
+def change_priority(connection: sqlite3.Connection):
+    pass
+
+
+def delete_task(connection: sqlite3.Connection):
+    pass
+
+
 if __name__ == '__main__':
     def main():
         connection = sqlite3.connect('todo.db')
