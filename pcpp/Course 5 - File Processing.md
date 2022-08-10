@@ -21,3 +21,10 @@ Noteworthy modules:
 - `xml.sax`: Simple API for XML. Provides event-driven XML document analysis. More complex than the others; reserve its use for niche cases where it's needed.
 
 This module uses the `xml.etree.ElementTree` module exclusively.
+
+Add a prolog with `ElementTree(root).write(xml_declaration=True, ...)`
+
+# Module 3 - CSV
+
+You can use `DictReader` on .csv files without a header, but you must use `DictReader(file, fieldnames=[...])` to do so.
+- Supplying more field names than there are columns in a row will fill the missing values of those columns with `None`.
