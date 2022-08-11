@@ -28,3 +28,10 @@ Add a prolog with `ElementTree(root).write(xml_declaration=True, ...)`
 
 You can use `DictReader` on .csv files without a header, but you must use `DictReader(file, fieldnames=[...])` to do so.
 - Supplying more field names than there are columns in a row will fill the missing values of those columns with `None`.
+
+`csv.writer(..., quotechar='"', quoting=csv.QUOTE_MINIMAL)`
+- `csv.QUOTE_ALL` quotes all values.
+- `csv.QUOTE_NONNUMERIC` quotes all non-number values.
+- `csv.QUOTE_MINIMAL` only quotes values that contain special characters like delimiters.
+- `csv.QUOTE_NONE` does not quote values. This will raise an error if the one of the values contains a special character.
+
