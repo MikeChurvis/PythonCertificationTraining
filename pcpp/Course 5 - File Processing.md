@@ -63,9 +63,39 @@ Use `logger.addHandler(handler)` to perform operations in response to log events
 
 > **NOTE:** Each logger can have several handlers added. One handler can save logs to a file, while another can send them to an external service. In order to process messages with a level lower than `WARNING` by added handlers, it's necessary to set this level threshold in the root logger.
 
-The implication of ^this is that even if you say `handler.setLevel(logging.INFO)`, your handler **will not** receive `INFO`-level log events unless the `root` logger's level is set to `INFO` or lower.
+**Implication:** even if you say `handler.setLevel(logging.INFO)`, your handler **will not** receive `INFO`-level log events unless the `root` logger's level is set to `INFO` or lower. Example:
+
+```python
+# BOTH must be set to the right level.
+logger = ...
+logger.setLevel(logging.DEBUG)
+
+handler = ...
+handler.setLevel(logging.DEBUG)
+logger.addHandler(handler)
+```
 
 ```python
 formatter = logging.Formatter(FORMAT)  
 handler.setFormatter(formatter)
 ```
+
+# Module 5 - Config Parser
+
+Example:
+
+```ini
+[DEFAULT] 
+host = localhost # This is a comment. 
+
+[mariadb] 
+name = hello 
+user = user 
+password = password 
+
+[redis] 
+port = 6379 
+db = 0
+```
+
+Interpolation is done with `key = %(previously_defined_value)s`.
