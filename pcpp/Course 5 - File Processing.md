@@ -45,3 +45,27 @@ You can use `DictReader` on .csv files without a header, but you must use `DictR
 `logging.getLogger` is idempotent.
 
 The default config (`logging.basicConfig()`) will not show `INFO` or `DEBUG` logs.
+
+`logging.basicConfig(level=logging.CRITICAL, filename='prod.log', filemode='a')`
+- Setting `filename` writes logs to a file instead of standard output.
+- Having set `filename`, you can set `filemode='a'` to append-only write to the log file.
+
+`logging.basicConfig(..., format="%(name)s:%(levelname)s:%(asctime)s:%(message)s"`
+- Format a value with `$(value)s`, where `value` is one of the attributes of a log entry.
+- `name` is the name of the logger.
+- `levelname` is the label associated with this logger's log level (i.e. `CRITICAL`).
+- `asctime` is a human-readable timestamp.
+- `message` is the log message.
+
+## Log Handlers
+
+Use `logger.addHandler(handler)` to perform operations in response to log events.
+
+> **NOTE:** Each logger can have several handlers added. One handler can save logs to a file, while another can send them to an external service. In order to process messages with a level lower than `WARNING` by added handlers, it's necessary to set this level threshold in the root logger.
+
+The implication of ^this is that even if you say `handler.setLevel(logging.INFO)`, your handler **will not** receive `INFO`-level log events unless the `root` logger's level is set to `INFO` or lower.
+
+```python
+formatter = logging.Formatter(FORMAT)  
+handler.setFormatter(formatter)
+```
