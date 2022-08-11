@@ -35,3 +35,13 @@ You can use `DictReader` on .csv files without a header, but you must use `DictR
 - `csv.QUOTE_MINIMAL` only quotes values that contain special characters like delimiters.
 - `csv.QUOTE_NONE` does not quote values. This will raise an error if the one of the values contains a special character.
 
+# Module 4 - Logging
+
+`logging.getLogger()` gets the root logger.
+`logging.getLogger('hello')` creates a logger (child of root logger) named 'hello'.
+`logging.getLogger('hello.world')` creates a logger (child of hello logger) named 'world'.
+`logging.getLogger(__name__)` creates a logger idendified by the name of the current module. *This is the recommended practice.*
+
+`logging.getLogger` is idempotent.
+
+The default config (`logging.basicConfig()`) will not show `INFO` or `DEBUG` logs.
